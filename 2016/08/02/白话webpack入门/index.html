@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.">
+<meta name="description" content="webpack的官方文档我就不说了，大家看完肯定都会有一种踩了shit的感觉，我自己研究了两天，请教了几个前辈，根据自己情况写了一篇通俗易懂的入门教程。读这篇文章之前，首先你要有node开发环境，然后就跟着我一步一步走吧，本人用的是windows，用mac的码帅自觉右上角。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="白话javascript回调函数">
-<meta property="og:url" content="http://yoursite.com/2016/07/15/白话javascript回调函数/index.html">
+<meta property="og:title" content="白话webpack入门">
+<meta property="og:url" content="http://yoursite.com/2016/08/02/白话webpack入门/index.html">
 <meta property="og:site_name" content="源于热爱">
-<meta property="og:description" content="之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.">
-<meta property="og:updated_time" content="2016-07-15T02:52:22.753Z">
+<meta property="og:description" content="webpack的官方文档我就不说了，大家看完肯定都会有一种踩了shit的感觉，我自己研究了两天，请教了几个前辈，根据自己情况写了一篇通俗易懂的入门教程。读这篇文章之前，首先你要有node开发环境，然后就跟着我一步一步走吧，本人用的是windows，用mac的码帅自觉右上角。">
+<meta property="og:updated_time" content="2016-08-02T07:14:02.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白话javascript回调函数">
-<meta name="twitter:description" content="之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.">
+<meta name="twitter:title" content="白话webpack入门">
+<meta name="twitter:description" content="webpack的官方文档我就不说了，大家看完肯定都会有一种踩了shit的感觉，我自己研究了两天，请教了几个前辈，根据自己情况写了一篇通俗易懂的入门教程。读这篇文章之前，首先你要有node开发环境，然后就跟着我一步一步走吧，本人用的是windows，用mac的码帅自觉右上角。">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/15/白话javascript回调函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/02/白话webpack入门/"/>
 
-  <title> 白话javascript回调函数 | 源于热爱 </title>
+  <title> 白话webpack入门 | 源于热爱 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
             
             
               
-                白话javascript回调函数
+                白话webpack入门
               
             
           </h1>
@@ -268,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-15T10:51:13+08:00" content="2016-07-15">
-              2016-07-15
+            <time itemprop="dateCreated" datetime="2016-08-02T15:13:13+08:00" content="2016-08-02">
+              2016-08-02
             </time>
           </span>
 
@@ -298,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/15/白话javascript回调函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/15/白话javascript回调函数/" itemprop="commentsCount"></span>
+                <a href="/2016/08/02/白话webpack入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/白话webpack入门/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,9 +322,9 @@
       
 
       
-        <p>之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[javascript code]</div><div class="line">function parent(callback)&#123;</div><div class="line">//do parent&apos;s thing</div><div class="line">var result=&quot;函数执行的结果，如果不是回调，你就要把这个结果return掉&quot;;</div><div class="line">//如果是回调函数，并不需要return，直接这么写</div><div class="line">callback(result);</div><div class="line">&#125;</div><div class="line">//下面调用上面的函数</div><div class="line">parent（function（data）&#123;</div><div class="line">console.log(data);</div><div class="line">&#125;）；</div></pre></td></tr></table></figure>
-<p>上面的这个函数就会输出parent函数的result，就是把上一个函数的结果当成参数执行，parent函数就不需要返回值，记住，有回调函数不要写return！！！<br>这样看书是不是很明白，比大牛们说的异步好理解多了，其实，就是执行下面的函数需要上面函数的执行结果，我们就写一个回调，把执行的结果传进去，就完成了回调。</p>
+        <p>webpack的官方文档我就不说了，大家看完肯定都会有一种踩了shit的感觉，我自己研究了两天，请教了几个前辈，根据自己情况写了一篇通俗易懂的入门教程。<br>读这篇文章之前，首先你要有node开发环境，然后就跟着我一步一步走吧，本人用的是windows，用mac的码帅自觉右上角。<br><a id="more"></a><br>首先，打开你的cmd输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//全局安装webpack</div><div class="line">npm install webpack -g</div></pre></td></tr></table></figure></p>
+<p>安装之后，在cmd里面敲一下webpack，如果出现option的帮助选项，恭喜你同学，最重要的一步你已经完成了，接下来就是在项目中运用了，我是把webpack当做模块化的工具来用的，如果期望更多功能的同学请右上角，我的项目目录是这样的：<br>/———–项目名称<br>/————-src<br>/—————css<br>/—————js<br>/—————–vendors<br>/—————img<br>/—————index.html<br>/—————webpack.config.js<br>js目录下的vendors存放第三方的公共js，如jquery等，js目录下面存放你要写的js文件，webpack生成的bundle.js也存放在该目录下（根据webpack.config.js配置可控），下面不多说上webpack.config.js代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&apos;use strict&apos;;</div><div class="line">var webpack= require(&apos;webpack&apos;);</div><div class="line">var path= require(&apos;path&apos;);</div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        &quot;login&quot;: &apos;./js/login.js&apos;</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname+&apos;/js&apos;,</div><div class="line">        filename: &apos;[name].bundle.js&apos;</div><div class="line">    &#125;,</div><div class="line">    resolve: &#123;</div><div class="line">        alias: &#123;</div><div class="line">            jquery: path.join(__dirname, &quot;./js/vendor/jquery/jquery.js&quot;),</div><div class="line">            select2: path.join(__dirname,&quot;./js/vendor/select/select2.js&quot;)</div><div class="line">		&#125;,</div><div class="line">        extensions: [&apos;&apos;,&apos;.js&apos;,&apos;.json&apos;, &apos;.webpack.js&apos;, &apos;.web.js&apos;]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>entry是入口文件，官方说法是入口文件，其实就是你要最先执行的js文件，然后的output 就是你要打包出来的文件的文件位置和名字，resolve里面就定义一些公共的js或者乱七八糟的东西.其实到这里也没什么好说了，然后就是写代码了，我是把webpack当做业务分模块的工具，可以和gulp结合成为前端工作流，开发快，不过gulp的学习曲线有点陡峭，要实战才能感觉出来，就酱，有什么问题的可以在留言里面回复我。</p>
 
       
     </div>
@@ -356,17 +356,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/14/最新版HEXO3.2.2部署到Github/" rel="next" title="填坑：最新版HEXO3.2.2部署到Github">
-                <i class="fa fa-chevron-left"></i> 填坑：最新版HEXO3.2.2部署到Github
+              <a href="/2016/07/15/白话javascript回调函数/" rel="next" title="白话javascript回调函数">
+                <i class="fa fa-chevron-left"></i> 白话javascript回调函数
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/02/白话webpack入门/" rel="prev" title="白话webpack入门">
-                白话webpack入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -392,8 +388,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/15/白话javascript回调函数/"
-           data-title="白话javascript回调函数" data-url="http://yoursite.com/2016/07/15/白话javascript回调函数/">
+      <div class="ds-thread" data-thread-key="2016/08/02/白话webpack入门/"
+           data-title="白话webpack入门" data-url="http://yoursite.com/2016/08/02/白话webpack入门/">
       </div>
     
   </div>
