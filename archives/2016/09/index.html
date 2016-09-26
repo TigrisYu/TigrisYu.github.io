@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="技术填坑," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,15 @@
 
 
 
-<meta name="description" content="之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="白话javascript回调函数">
-<meta property="og:url" content="http://yoursite.com/2016/07/15/白话javascript回调函数/index.html">
+<meta name="description" content="我是一条不想当骡子的鱼">
+<meta property="og:type" content="website">
+<meta property="og:title" content="源于热爱">
+<meta property="og:url" content="http://yoursite.com/archives/2016/09/index.html">
 <meta property="og:site_name" content="源于热爱">
-<meta property="og:description" content="之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.">
-<meta property="og:updated_time" content="2016-07-15T02:52:22.753Z">
+<meta property="og:description" content="我是一条不想当骡子的鱼">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白话javascript回调函数">
-<meta name="twitter:description" content="之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.">
+<meta name="twitter:title" content="源于热爱">
+<meta name="twitter:description" content="我是一条不想当骡子的鱼">
 
 
 
@@ -114,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/15/白话javascript回调函数/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2016/09/"/>
 
-  <title> 白话javascript回调函数 | 源于热爱 </title>
+  <title> 归档 | 源于热爱 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right page-post-detail ">
+  <div class="container one-collumn sidebar-position-right  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,154 +234,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 7 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                白话javascript回调函数
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-15T10:51:13+08:00" content="2016-07-15">
-              2016-07-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">技术杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/15/白话javascript回调函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/15/白话javascript回调函数/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
-      
-        <p>之前在写回调函数的时候，上网找了几篇资料，写的迷迷糊糊的，让我似懂非懂，于是看了几段代码，自己总结了下比较容易理解的，talk is cheap,let me show u the code.<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[javascript code]</div><div class="line">function parent(callback)&#123;</div><div class="line">//do parent&apos;s thing</div><div class="line">var result=&quot;函数执行的结果，如果不是回调，你就要把这个结果return掉&quot;;</div><div class="line">//如果是回调函数，并不需要return，直接这么写</div><div class="line">callback(result);</div><div class="line">&#125;</div><div class="line">//下面调用上面的函数</div><div class="line">parent（function（data）&#123;</div><div class="line">console.log(data);</div><div class="line">&#125;）；</div></pre></td></tr></table></figure>
-<p>上面的这个函数就会输出parent函数的result，就是把上一个函数的结果当成参数执行，parent函数就不需要返回值，记住，有回调函数不要写return！！！<br>这样看书是不是很明白，比大牛们说的异步好理解多了，其实，就是执行下面的函数需要上面函数的执行结果，我们就写一个回调，把执行的结果传进去，就完成了回调。</p>
-
-      
-    </div>
-
-    <div>
       
         
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/技术填坑/" rel="tag">#技术填坑</a>
-          
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
         </div>
       
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/07/14/最新版HEXO3.2.2部署到Github/" rel="next" title="填坑：最新版HEXO3.2.2部署到Github">
-                <i class="fa fa-chevron-left"></i> 填坑：最新版HEXO3.2.2部署到Github
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/02/白话webpack入门/" rel="prev" title="白话webpack入门">
-                白话webpack入门 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/09/26/JS常见算法/" itemprop="url">
+              
+                <span itemprop="name">未命名</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-26T10:08:25+08:00"
+              content="2016-09-26" >
+          09-26
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -390,14 +301,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/07/15/白话javascript回调函数/"
-           data-title="白话javascript回调函数" data-url="http://yoursite.com/2016/07/15/白话javascript回调函数/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -417,17 +320,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oa8x66ja0.bkt.clouddn.com/jingzi.jpg"
@@ -477,17 +371,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -591,9 +474,11 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
