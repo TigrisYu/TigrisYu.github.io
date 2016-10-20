@@ -68,8 +68,7 @@
         <div class="row">
             <!-- Post Main Content -->
             <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>闲着没什么事想自己搞一个博客，阿里云到期了，也懒得备案，前几天有人和我推荐了<strong>hexo</strong>，看了下，挺不错的，而且还可以发布到<strong>github</strong>上，关键是对我这种码畜来说省钱啊，但是部署的过程中有很多坑，网上的很多教程都是很老的了，下面我说下目前最新版的<strong>hexo</strong>部署到<strong>github</strong>上的步骤吧：</p>
-<p>前面的安装node和hexo的步骤我就不讲了，左转<br><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a><br>上面的博客里面细节问题已经讲得很清楚了，我就不重复了，主要讲一下安装完hexo，在本地可以成功跑起来的，想要放到<strong>github</strong>上的同学。<br>本人用的是windows，下面的操作都是在win上面，用mac的码帅请自觉右上角(╯‵□′)╯︵┻━┻<br><a id="more"></a></p>
+                <p>闲着没什么事想自己搞一个博客，阿里云到期了，也懒得备案，前几天有人和我推荐了<strong>hexo</strong>，看了下，挺不错的，而且还可以发布到<strong>github</strong>上，关键是对我这种码畜来说省钱啊，但是部署的过程中有很多坑，网上的很多教程都是很老的了，下面我说下目前最新版的<strong>hexo</strong>部署到<strong>github</strong>上的步骤吧：<br>前面的安装node和hexo的步骤我就不讲了，左转<br><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a><br>上面的博客里面细节问题已经讲得很清楚了，我就不重复了，主要讲一下安装完hexo，在本地可以成功跑起来的，想要放到<strong>github</strong>上的同学。<br>本人用的是windows，下面的操作都是在win上面，用mac的码帅请自觉右上角(╯‵□′)╯︵┻━┻<br><a id="more"></a></p>
 <p>##获取ssh key并和github建立对应关系<br>打开安装好的<strong>gitbash</strong> 在里面输入下面的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.email &quot;这里输入你的邮箱&quot;</div><div class="line">git config --global user.name &quot;这里输入你的用户名&quot;</div></pre></td></tr></table></figure></p>
 <p>然后根据你的邮箱生成密匙<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;bu.ru@qq.com&quot;</div></pre></td></tr></table></figure></p>
 <p>然后新建一个文件夹最好是这样的 E:\git\myssh</p>
